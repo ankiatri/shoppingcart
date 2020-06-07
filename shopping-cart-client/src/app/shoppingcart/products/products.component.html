@@ -1,0 +1,25 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2 style="display: inline-block;">List of Products</h2>
+      <button (click)="viewCart()" style="border-color: black; float: right;" class="btn btn">Cart Items: {{counter}}</button>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+            <td><button (click)="addItemToCart(product)" class="btn btn-danger">Add to Cart</button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

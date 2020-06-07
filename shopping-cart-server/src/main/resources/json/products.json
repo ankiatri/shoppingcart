@@ -1,0 +1,49 @@
+ [{
+ 		"id": 1,
+ 		"name": "Samsung 1",
+ 		"description": "Samsung galaxy 1 smart phone",
+ 		"price": 100.00
+ 	},
+ 	{
+ 		"id": 2,
+ 		"name": "Samsung 2",
+ 		"description": "Samsung galaxy 2 smart phone",
+ 		"price": 200.00
+ 	},
+   	{
+ 		"id": 3,
+ 		"name": "Samsung 3",
+ 		"description": "Samsung galaxy 3 smart phone",
+ 		"price": 300.00
+ 	},
+   	{
+ 		"id": 4,
+ 		"name": "Samsung 4",
+ 		"description": "Samsung galaxy 4 smart phone",
+ 		"price": 400.00
+ 	},
+   	{
+ 		"id": 5,
+ 		"name": "Iphone 1",
+ 		"description": "Iphone 1 smart phone",
+ 		"price": 500.00
+ 	},
+   	{
+ 		"id": 6,
+ 		"name": "Iphone 2",
+ 		"description": "Iphone 2 smart phone",
+ 		"price": 600.00
+ 	},
+   	{
+ 		"id": 7,
+ 		"name": "Iphone 3",
+ 		"description": "Iphone 3 smart phone",
+ 		"price": 700.00
+ 	},
+   	{
+ 		"id": 8,
+ 		"name": "Iphone 4",
+ 		"description": "Iphone 4 smart phone",
+ 		"price": 800.00
+ 	}
+ ]

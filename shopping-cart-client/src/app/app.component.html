@@ -1,0 +1,40 @@
+<nav class="navbar navbar-light navbar-expand-sm bg-primary" style="flex-flow: column;">
+  <h2 style="text-align: center; color: lightcyan">{{title}}</h2>
+</nav>
+
+<div class="container-fluid">
+<nav class="navbar navbar-default nav-tabs bg-light">
+<!-- <nav class="nav nav-tabs navbar-expand-sm">
+  <div class="container"> -->
+    <!-- Links -->
+    <ul class="nav nav-tabs navbar-left">
+      <li class="nav-item">
+        <a routerLink="home" class="nav-link" routerLinkActive="active">Home</a>
+    </li>
+      <li class="nav-item  justify-content-end">
+          <a routerLink="product" class="nav-link" routerLinkActive="active">Product List</a>
+      </li>
+      <li class="nav-item justify-content-end" (click)="logout()">
+        <a href="javascript:void(0)" class="nav-link" routerLinkActive="active">Logout</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+     <li><a routerLink="viewCart" class="nav-link" routerLinkActive="active" style="padding: 0;">
+        <img src="assets/img/shoppingcart.png" class="img-responsive" style="width: 30%;"></a>
+      </li> 
+    </ul>
+  </nav>
+</div>
+  <br>
+  <hr>  
+  <div class="card">
+    <div class="card-body">
+       <router-outlet></router-outlet>
+    </div>
+  </div>
+
+<footer class="footer">
+  <div class="container">
+      <span>All Rights Reserved 2020</span>
+  </div>
+</footer>

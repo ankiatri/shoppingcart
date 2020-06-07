@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>CartItems</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let cartItem of cartItems ">
+              <td>{{cartItem.product.name}}</td>
+              <td>{{cartItem.product.price}}</td>
+              <td><input #quant value="{{cartItem.quantity}}" type="text"></td>
+              <td>
+                <button (click)="viewProduct(cartItem.product.id)" class="btn btn-info" style="margin: 10px;">View product</button>
+                <button (click)="updateCartItem(cartItem, quant.value)" class="btn btn-primary" style="margin: 10px;">Update product</button>
+                <button (click)="removeCartItem(cartItem)" class="btn btn-danger" style="margin: 10px;">Delete product</button>   
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+          <div>Total Amount: {{total}}</div>
+          <div><button (click)="submitOrder()" class="btn btn-success" style="margin: 10px;">Submit Order</button>   
+          </div>
+    </div>
+    
+  </div>
