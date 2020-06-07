@@ -1,5 +1,5 @@
-# Shopping Cart Solution
-Shopping Cart Solution using Spring Boot and Angular 9
+# Shopping Cart Application
+Shopping Cart Application using Spring Boot, JPA and Angular 9
 
 Solution is composed of three projects: 
   * shopping-cart-server: Spring Boot 2.3.0
