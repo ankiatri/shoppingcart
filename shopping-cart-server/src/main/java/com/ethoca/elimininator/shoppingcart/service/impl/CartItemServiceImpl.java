@@ -43,8 +43,8 @@ public class CartItemServiceImpl implements CartItemService {
 
     @Override
     public List<CartItem> addCartItem(Long userId, CartItem item) {
-        CartItem cartItem = cartItemRepository.findByProductId(item.getProduct().getId());
-        if (cartItem != null && !Status.SUBMITTED.equals(cartItem.getStatus())) {
+        CartItem cartItem = cartItemRepository.findByProductIdAndStatus(item.getProduct().getId(), Status.OPENED);
+        if (cartItem != null) {
             int quantity = cartItem.getQuantity() != 0 ? cartItem.getQuantity() + item.getQuantity()
                     : item.getQuantity();
             item.setQuantity(quantity);
@@ -60,14 +60,14 @@ public class CartItemServiceImpl implements CartItemService {
 
     @Override
     public List<CartItem> updateCartItem(Long userId, CartItem item) {
-        CartItem cartItem = cartItemRepository.findByProductIdAndStatus(item.getProduct().getId(), item.getStatus());
+        CartItem cartItem = cartItemRepository.findByProductIdAndStatus(item.getProduct().getId(), Status.OPENED);
         if (cartItem != null) {
             item.setProduct(cartItem.getProduct());
             item.setId(cartItem.getId());
         }
         item.setUserId(userId);
         cartItemRepository.saveAndFlush(item);
-        return getCartItems(userId);
+        return getCartItemsByStatus(userId, Status.OPENED);
     }
 
     @Override
