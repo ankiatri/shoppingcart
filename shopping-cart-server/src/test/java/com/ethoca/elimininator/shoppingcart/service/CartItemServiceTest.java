@@ -74,7 +74,8 @@ public class CartItemServiceTest {
         cartItem.setId(1L);
         cartItem.setQuantity(4);
         cartItem.setProduct(product);
-        when(cartItemRepository.findByProductId(any())).thenReturn(mockCartItem);
+        cartItem.setStatus(Status.OPENED);
+        when(cartItemRepository.findByProductIdAndStatus(any(), any())).thenReturn(mockCartItem);
         when(cartItemRepository.findByUserId(any())).thenReturn(Collections.singletonList(cartItem));
         List<CartItem> cartItems = cartItemService.addCartItem(1L, cartItem);
         assertThat(cartItems.size(), equalTo(1));
@@ -90,7 +91,8 @@ public class CartItemServiceTest {
         cartItem.setId(1L);
         cartItem.setQuantity(4);
         cartItem.setProduct(product);
-        when(cartItemRepository.findByProductId(any())).thenReturn(mockCartItem);
+        cartItem.setStatus(Status.OPENED);
+        when(cartItemRepository.findByProductIdAndStatus(any(), any())).thenReturn(mockCartItem);
         mockCartItems.add(cartItem);
         when(cartItemRepository.findByUserId(any())).thenReturn(mockCartItems);
 
@@ -107,9 +109,9 @@ public class CartItemServiceTest {
         cartItem.setId(1L);
         cartItem.setQuantity(4);
         cartItem.setProduct(product);
-
-        when(cartItemRepository.findByProductId(any())).thenReturn(mockCartItem);
-        when(cartItemRepository.findByUserId(any())).thenReturn(Collections.singletonList(cartItem));
+        cartItem.setStatus(Status.OPENED);
+        when(cartItemRepository.findByProductIdAndStatus(any(), any())).thenReturn(mockCartItem);
+        when(cartItemRepository.findByUserIdAndStatus(any(), any())).thenReturn(Collections.singletonList(cartItem));
 
         List<CartItem> cartItems = cartItemService.updateCartItem(1L, cartItem);
         assertThat(cartItems.size(), equalTo(1));
